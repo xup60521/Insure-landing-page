@@ -9,32 +9,57 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
-<body class="font-karla">
+<body class="font-karla" id="body">
+    <div id="menu" style="height: 0;" class="fixed w-full bg-c_Very_Dark_Violet z-20 overflow-hidden">
+        <div class="w-full absolute pt-36 top-0 left-0 h-screen flex gap-8 flex-col items-center">
+            <button class="text-white font-semibold uppercase text-xl">How we work</button>
+            <button class="text-white font-semibold uppercase text-xl">Blog</button>
+            <button class="text-white font-semibold uppercase text-xl">Account</button>
+            <button class="text-white font-semibold uppercase text-xl border-2 border-white w-[85vw] py-3">View plans</button>
+            <img src="/images/bg-pattern-mobile-nav.svg" alt="mobile nav pattern" class="absolute w-full bottom-0">
+        </div>
+    </div>
     <main class="w-full min-h-screen flex flex-col items-center">
         <!-- md:px-[10vw] -->
         <!-- top -->
-        <nav class="w-full bg-white flex items-center py-6 md:px-[10vw] gap-8 tracking-wide text-xs z-30 font-semibold">
+        <nav
+            class="w-full bg-white flex items-center py-6 px-6 md:px-[10vw] gap-8 tracking-wide text-xs z-30 font-semibold">
             <img src="/images/logo.svg" alt="logo">
             <div class="flex-grow"></div>
-            <button class="uppercase transition hover:text-black text-c_Dark_Grayish_Violet">How we work</button>
-            <button class="uppercase transition hover:text-black text-c_Dark_Grayish_Violet">Blog</button>
-            <button class="uppercase transition hover:text-black text-c_Dark_Grayish_Violet">Account</button>
+            <button class="md:block hidden uppercase transition hover:text-black text-c_Dark_Grayish_Violet">How we
+                work</button>
             <button
-                class="uppercase transition hover:bg-black hover:text-white px-6 py-[0.4rem] border-2 border-black">View
+                class="md:block hidden uppercase transition hover:text-black text-c_Dark_Grayish_Violet">Blog</button>
+            <button
+                class="md:block hidden uppercase transition hover:text-black text-c_Dark_Grayish_Violet">Account</button>
+            <button
+                class="md:block hidden uppercase transition hover:bg-black hover:text-white px-6 py-[0.4rem] border-2 border-black">View
                 plans</button>
+
+            <img role="button" id="menu-btn" src="/images/icon-hamburger.svg" alt="menu button" class="md:hidden cursor-pointer">
         </nav>
         <!-- top section -->
-        <section class="w-full md:px-[10vw] flex items-center justify-between bg-c_Dark_Violet gap-6 relative">
+        <section
+            class="w-full md:px-[10vw] flex md:flex-row flex-col items-center justify-between bg-c_Dark_Violet md:gap-6 relative">
             <img src="/images/bg-pattern-intro-right-desktop.svg" alt="intro pattern right desktop"
                 class="md:block hidden absolute right-0 top-0 h-[88%] z-10">
             <img src="/images/bg-pattern-intro-left-desktop.svg" alt="intro pattern left desktop"
                 class="md:block hidden absolute left-0 translate-y-[80%] w-[12vw]">
-            <div class="flex flex-col gap-6">
+
+            <img src="/images/image-intro-mobile.jpg" alt="intro mobile" class="md:hidden">
+            <div class="flex flex-col gap-6 md:px-0 px-8 md:items-start items-center md:py-0 py-24 relative">
+                <!-- mobile only pattern -->
+                <img src="/images/bg-pattern-intro-left-mobile.svg" alt="intro pattern left mobile"
+                    class="md:hidden top-0 left-0 absolute">
+                <img src="/images/bg-pattern-intro-right-mobile.svg" alt="intro pattern right mobile"
+                    class="md:hidden right-0 absolute translate-y-[70%]">
                 <!-- bar -->
-                <div class="max-w-[9rem] border-[1px] md:mb-8 border-white"></div>
-                <h1 class="font-dm text-white md:text-[4rem] md:leading-[4rem] max-w-[30rem]">Humanizing your insurance.
+                <div class="max-w-[9rem] md:block hidden border-[1px] md:mb-8 border-white"></div>
+                <h1
+                    class="font-dm text-white md:text-left text-center text-[2.5rem] md:px-0 px-4 leading-[2.5rem] md:text-[4rem] md:leading-[4rem] max-w-[30rem] z-10">
+                    Humanizing your insurance.
                 </h1>
-                <p class="text-white md:max-w-[40rem]">
+                <p class="text-white md:max-w-[40rem] md:text-left text-center md:px-0">
                     Get your life insurance coverage easier and faster. We blend our expertise
                     and technology to help you find the plan that’s right for you. Ensure you
                     and your loved ones are protected.
@@ -47,34 +72,35 @@
                 class="md:block hidden w-[38vw] translate-y-[5rem]">
         </section>
         <!-- different section -->
-        <section class="w-full flex flex-col md:px-[10vw] py-48 gap-16">
-            <div class="max-w-[9rem] border-[1px] md:mb-8 border-c_Dark_Violet"></div>
-            <h2 class="text-[4rem] font-dm">We’re different</h2>
-            <div class="md:grid grid-cols-3 w-full flex flex-col gap-4">
+        <section
+            class="w-full flex flex-col md:items-start items-center px-6 md:px-[10vw] md:py-48 py-36 md:gap-16 gap-6">
+            <div class="w-[9rem] border-[1px] md:mb-8 border-pink-200"></div>
+            <h2 class="md:text-[4rem] text-[3rem] font-dm md:text-left text-center">We’re different</h2>
+            <div class="md:grid grid-cols-3 w-full flex flex-col md:gap-4 gap-12 md:py-0 py-8">
                 <!-- 3 difference -->
                 <!-- snappy process -->
-                <div class="flex flex-col">
+                <div class="flex flex-col md:items-start items-center">
                     <img src="/images/icon-snappy-process.svg" alt="snappy process" class="size-16">
                     <h3 class="font-dm text-2xl pt-6 pb-4">Snappy Process</h3>
-                    <p class="text-c_Dark_Grayish_Violet">
+                    <p class="text-c_Dark_Grayish_Violet md:text-left text-center">
                         Our application process can be completed in minutes, not hours. Don’t get
                         stuck filling in tedious forms.
                     </p>
                 </div>
                 <!-- affordable prices -->
-                <div class="flex flex-col">
+                <div class="flex flex-col md:items-start items-center">
                     <img src="/images/icon-affordable-prices.svg" alt="affordable prices" class="size-16">
                     <h3 class="font-dm text-2xl pt-6 pb-4">Affordable Prices</h3>
-                    <p class="text-c_Dark_Grayish_Violet">
+                    <p class="text-c_Dark_Grayish_Violet md:text-left text-center">
                         We don’t want you worrying about high monthly costs. Our prices may be low,
                         but we still offer the best coverage possible.
                     </p>
                 </div>
                 <!-- people first -->
-                <div class="flex flex-col">
+                <div class="flex flex-col md:items-start items-center">
                     <img src="/images/icon-people-first.svg" alt="people first" class="size-16">
                     <h3 class="font-dm text-2xl pt-6 pb-4">People First</h3>
-                    <p class="text-c_Dark_Grayish_Violet">
+                    <p class="text-c_Dark_Grayish_Violet md:text-left text-center">
                         Our plans aren’t full of conditions and clauses to prevent payouts. We make
                         sure you’re covered when you need it.
                     </p>
@@ -82,11 +108,18 @@
             </div>
         </section>
         <!-- find out more -->
-        <section class="w-full md:px-[10vw] pb-48">
-            <div class="w-full flex items-center justify-between bg-c_Dark_Violet px-16 py-14 overflow-hidden relative">
+        <section class="w-full md:px-[10vw] px-4 pb-48">
+            <div
+                class="w-full flex md:flex-row flex-col items-center justify-between bg-c_Dark_Violet md:px-16 px-6 py-14 overflow-hidden relative gap-8">
+                <!-- pattern -->
                 <img src="/images/bg-pattern-how-we-work-desktop.svg" alt="how we work desktop"
                     class="md:block hidden absolute right-0 top-0 h-full">
-                <h2 class="text-white text-[2.5rem] leading-[2.5rem] font-dm max-w-[22rem]">Find out more about how we
+                <img src="/images/bg-pattern-how-we-work-mobile.svg" alt="how we work mobile"
+                    class="md:hidden absolute right-0 top-0 h-[90%]">
+                <!-- real content -->
+                <h2
+                    class="text-white md:text-left text-center text-[2.5rem] leading-[2.5rem] font-dm max-w-[22rem] z-10">
+                    Find out more about how we
                     work</h2>
                 <button
                     class="uppercase text-white border-2 border-white px-6 text-xs py-2 tracking-wider z-10 transition hover:bg-white hover:text-c_Dark_Violet">How
@@ -95,48 +128,56 @@
             </div>
         </section>
         <!-- footer -->
-        <footer class="w-full flex flex-col md:px-[10vw] bg-c_Very_Light_Gray relative">
+        <footer class="w-full flex flex-col md:px-[10vw] px-4 bg-c_Very_Light_Gray relative">
+            <!-- pattern -->
             <img src="/images/bg-pattern-footer-desktop.svg" alt="footer pattern desktop"
                 class="md:block absolute hidden top-0 left-0 w-[35vw]">
-            <div class="flex items-center py-12 gap-3 border-b-[1px] border-c_Dark_Grayish_Violet z-10">
+            <img src="/images/bg-pattern-footer-mobile.svg" alt="footer pattern mobile"
+                class="md:hidden absolute otp-0 left-0 w-full">
+            <!-- real content -->
+            <div
+                class="flex items-center md:flex-row flex-col md:py-12 pt-20 pb-16 gap-4 border-b-[1px] border-c_Dark_Grayish_Violet z-10">
                 <img src="/images/logo.svg" alt="logo">
                 <div class="flex-grow"></div>
-                <img role="button" src="/images/icon-facebook.svg" alt="fb icon"
-                    class="size-5 cursor-pointer transition hover:brightness-0">
-                <img role="button" src="/images/icon-twitter.svg" alt="twitter icon"
-                    class="size-5 cursor-pointer transition hover:brightness-0">
-                <img role="button" src="/images/icon-pinterest.svg" alt="pinterest icon"
-                    class="size-5 cursor-pointer transition hover:brightness-0">
-                <img role="button" src="/images/icon-instagram.svg" alt="instagram icon"
-                    class="size-5 cursor-pointer transition hover:brightness-0">
+                <div class="flex items-center gap-3">
+                    <img role="button" src="/images/icon-facebook.svg" alt="fb icon"
+                        class="size-5 cursor-pointer transition hover:brightness-0">
+                    <img role="button" src="/images/icon-twitter.svg" alt="twitter icon"
+                        class="size-5 cursor-pointer transition hover:brightness-0">
+                    <img role="button" src="/images/icon-pinterest.svg" alt="pinterest icon"
+                        class="size-5 cursor-pointer transition hover:brightness-0">
+                    <img role="button" src="/images/icon-instagram.svg" alt="instagram icon"
+                        class="size-5 cursor-pointer transition hover:brightness-0">
+                </div>
             </div>
-            <div class="md:grid grid-cols-4 flex flex-col gap-6 uppercase font-semibold text-sm py-12 tracking-wider z-10">
+            <div
+                class="md:grid grid-cols-4 flex flex-col md:gap-6 gap-8 uppercase font-semibold py-12 tracking-wider z-10 text-xs">
                 <!-- our company -->
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col md:items-start items-center gap-2">
                     <span class="text-c_Dark_Grayish_Violet mb-4">Our company</span>
-                    <button class="w-fit hover:underline">How we work</button>
-                    <button class="w-fit hover:underline">Why Insure?</button>
-                    <button class="w-fit hover:underline">View plans</button>
-                    <button class="w-fit hover:underline">Reviews</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">How we work</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Why Insure?</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">View plans</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Reviews</button>
                 </div>
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col md:items-start items-center gap-2">
                     <span class="text-c_Dark_Grayish_Violet mb-4">Help me</span>
-                    <button class="w-fit hover:underline">FAQ</button>
-                    <button class="w-fit hover:underline">Terms of use</button>
-                    <button class="w-fit hover:underline">Privacy policy</button>
-                    <button class="w-fit hover:underline">Cookies</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">FAQ</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Terms of use</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Privacy policy</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Cookies</button>
                 </div>
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col md:items-start items-center gap-2">
                     <span class="text-c_Dark_Grayish_Violet mb-4">Contact</span>
-                    <button class="w-fit hover:underline">Sales</button>
-                    <button class="w-fit hover:underline">Support</button>
-                    <button class="w-fit hover:underline">Live chat</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Sales</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Support</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Live chat</button>
                 </div>
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col md:items-start items-center gap-2">
                     <span class="text-c_Dark_Grayish_Violet mb-4">Others</span>
-                    <button class="w-fit hover:underline">Careers</button>
-                    <button class="w-fit hover:underline">Press</button>
-                    <button class="w-fit hover:underline">Licenses</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Careers</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Press</button>
+                    <button class="w-fit hover:underline text-c_Dark_Violet uppercase">Licenses</button>
                 </div>
             </div>
         </footer>
